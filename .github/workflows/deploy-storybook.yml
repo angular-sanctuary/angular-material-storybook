@@ -1,0 +1,23 @@
+name: Publish Storybook
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      - name: Build Storybook
+        run: |
+          npm install
+          npx ng run showcase:build-storybook
+      - name: Deploy Storybook
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          folder: storybook-static
