@@ -2,6 +2,7 @@ import {Meta, moduleMetadata, Story} from "@storybook/angular";
 import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
 import {MatButtonModule} from "@angular/material/button";
+import {badgeArgtypes} from "./badge/badge.argtype";
 
 export default {
   title: 'Components/Icon',
@@ -9,10 +10,17 @@ export default {
     moduleMetadata({
       imports: [MatIconModule, MatBadgeModule, MatButtonModule]
     })
-  ]
+  ],
+  parameters: {
+    options: {
+      controls: {
+        disable: true
+      }
+    }
+  }
 } as Meta;
 
-export const Overview: Story = args => ({
+export const BasicUsage: Story = args => ({
   props: args,
   template: `
 <style>mat-icon {margin: 10px}</style>
@@ -23,22 +31,30 @@ export const Overview: Story = args => ({
 <mat-icon>open_in_new</mat-icon>
 `
 });
-Overview.storyName = 'Overview';
+BasicUsage.storyName = 'basic usage';
 
-export const Badge: Story = args => ({
+export const WithBadge: Story = args => ({
   props: args,
   template: `
 <style>mat-icon {margin: 10px}</style>
-<mat-icon matBadge="2">more_vert</mat-icon>
-<mat-icon matBadge="2" matBadgeColor="primary">home</mat-icon>
-<mat-icon matBadge="2" matBadgeColor="accent">menu</mat-icon>
-<mat-icon matBadge="2" matBadgeColor="warn">favorite</mat-icon>
-<mat-icon matBadge="2">home</mat-icon>
+<mat-icon [matBadge]="matBadge" [matBadgeDescription]="matBadgeDescription" [matBadgeDisabled]="matBadgeDisabled" [matBadgeHidden]="matBadgeHidden" [matBadgeOverlap]="matBadgeOverlap" [matBadgePosition]="matBadgePosition" [matBadgeSize]="matBadgeSize">more_vert</mat-icon>
+<mat-icon [matBadge]="matBadge" [matBadgeDescription]="matBadgeDescription" [matBadgeDisabled]="matBadgeDisabled" [matBadgeHidden]="matBadgeHidden" [matBadgeOverlap]="matBadgeOverlap" [matBadgePosition]="matBadgePosition" [matBadgeSize]="matBadgeSize" matBadgeColor="primary">home</mat-icon>
+<mat-icon [matBadge]="matBadge" [matBadgeDescription]="matBadgeDescription" [matBadgeDisabled]="matBadgeDisabled" [matBadgeHidden]="matBadgeHidden" [matBadgeOverlap]="matBadgeOverlap" [matBadgePosition]="matBadgePosition" [matBadgeSize]="matBadgeSize" matBadgeColor="accent">menu</mat-icon>
+<mat-icon [matBadge]="matBadge" [matBadgeDescription]="matBadgeDescription" [matBadgeDisabled]="matBadgeDisabled" [matBadgeHidden]="matBadgeHidden" [matBadgeOverlap]="matBadgeOverlap" [matBadgePosition]="matBadgePosition" [matBadgeSize]="matBadgeSize" matBadgeColor="warn">favorite</mat-icon>
+<mat-icon [matBadge]="matBadge" [matBadgeDescription]="matBadgeDescription" [matBadgeDisabled]="matBadgeDisabled" [matBadgeHidden]="matBadgeHidden" [matBadgeOverlap]="matBadgeOverlap" [matBadgePosition]="matBadgePosition" [matBadgeSize]="matBadgeSize">open_in_new</mat-icon>
 `
 });
-Badge.storyName = 'with Badge';
+WithBadge.storyName = 'with badge';
+WithBadge.parameters = {
+  controls: {
+    expanded: true
+  }
+}
+WithBadge.argTypes = {
+  ...badgeArgtypes
+}
 
-export const Buttons: Story = args => ({
+export const WithButtons: Story = args => ({
   props: args,
   template: `
 <style>mat-icon {margin: 10px}</style>
@@ -49,6 +65,32 @@ export const Buttons: Story = args => ({
 <button mat-icon-button disabled><mat-icon>open_in_new</mat-icon></button>
 `
 });
-Buttons.storyName = 'with buttons';
+WithButtons.storyName = 'with buttons';
+
+export const WithFloatingActionButtons: Story = args => ({
+  props: args,
+  template: `
+<style>button {margin: 10px}</style>
+<button mat-fab><mat-icon>more_vert</mat-icon></button>
+<button mat-fab color="primary"><mat-icon>home</mat-icon></button>
+<button mat-fab color="accent"><mat-icon>menu</mat-icon></button>
+<button mat-fab color="warn"><mat-icon>favorite</mat-icon></button>
+<button mat-fab disabled><mat-icon>open_in_new</mat-icon></button>
+`
+});
+WithFloatingActionButtons.storyName = 'with floating action buttons';
+
+export const WithMiniFloatingActionButtons: Story = args => ({
+  props: args,
+  template: `
+<style>button {margin: 10px}</style>
+<button mat-mini-fab><mat-icon>more_vert</mat-icon></button>
+<button mat-mini-fab color="primary"><mat-icon>home</mat-icon></button>
+<button mat-mini-fab color="accent"><mat-icon>menu</mat-icon></button>
+<button mat-mini-fab color="warn"><mat-icon>favorite</mat-icon></button>
+<button mat-mini-fab disabled><mat-icon>open_in_new</mat-icon></button>
+`
+});
+WithMiniFloatingActionButtons.storyName = 'with mini floating action buttons';
 
 
