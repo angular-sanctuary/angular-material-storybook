@@ -33,7 +33,7 @@ export const Badge: Story = args => ({
 <mat-icon matBadge="2" matBadgeColor="primary">home</mat-icon>
 <mat-icon matBadge="2" matBadgeColor="accent">menu</mat-icon>
 <mat-icon matBadge="2" matBadgeColor="warn">favorite</mat-icon>
-<mat-icon matBadge="2">open_in_new</mat-icon>
+<mat-icon matBadge="2">home</mat-icon>
 `
 });
 Badge.storyName = 'with Badge';

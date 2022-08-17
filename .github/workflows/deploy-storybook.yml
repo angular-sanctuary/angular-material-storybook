@@ -2,8 +2,12 @@ name: Publish Storybook
 
 on:
   push:
-    branches:
-      - main
+    branches: [$default-branch]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -17,7 +21,18 @@ jobs:
         run: |
           npm install
           npx ng run showcase:build-storybook
-      - name: Deploy Storybook
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          folder: storybook-static
+          path: ./storybook-static
+    # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
