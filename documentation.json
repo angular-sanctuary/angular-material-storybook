@@ -387,6 +387,26 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Badge",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/components/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: args,\n  template: `\n<style>mat-icon {margin: 10px}</style>\n<mat-icon matBadge=\"2\">more_vert</mat-icon>\n<mat-icon matBadge=\"2\">home</mat-icon>\n<mat-icon matBadge=\"2\">menu</mat-icon>\n<mat-icon matBadge=\"2\">favorite</mat-icon>\n<mat-icon matBadge=\"2\">open_in_new</mat-icon>\n`\n})"
+            },
+            {
+                "name": "Buttons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/components/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: args,\n  template: `\n<style>mat-icon {margin: 10px}</style>\n<button mat-icon-button color=\"primary\"><mat-icon>more_vert</mat-icon></button>\n<button mat-icon-button><mat-icon>home</mat-icon></button>\n<button mat-icon-button><mat-icon>menu</mat-icon></button>\n<button mat-icon-button><mat-icon>favorite</mat-icon></button>\n<button mat-icon-button><mat-icon>open_in_new</mat-icon></button>\n`\n})"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -467,6 +487,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Overview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/components/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: args,\n  template: `\n<style>mat-icon {margin: 10px}</style>\n<mat-icon>more_vert</mat-icon>\n<mat-icon>home</mat-icon>\n<mat-icon>menu</mat-icon>\n<mat-icon>favorite</mat-icon>\n<mat-icon>open_in_new</mat-icon>\n`\n})"
+            },
+            {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -509,16 +539,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -529,27 +549,59 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Page.stories.ts",
+                "file": "stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/components/icon.stories.ts",
+                "file": "stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "args => ({\n  props: {\n    ...args,\n    label: 'home'\n  },\n  template: `<mat-icon>{{label}}</mat-icon>`\n})"
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "stories/components/icon.stories.ts": [
+                {
+                    "name": "Badge",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\n  props: args,\n  template: `\n<style>mat-icon {margin: 10px}</style>\n<mat-icon matBadge=\"2\">more_vert</mat-icon>\n<mat-icon matBadge=\"2\">home</mat-icon>\n<mat-icon matBadge=\"2\">menu</mat-icon>\n<mat-icon matBadge=\"2\">favorite</mat-icon>\n<mat-icon matBadge=\"2\">open_in_new</mat-icon>\n`\n})"
+                },
+                {
+                    "name": "Buttons",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\n  props: args,\n  template: `\n<style>mat-icon {margin: 10px}</style>\n<button mat-icon-button color=\"primary\"><mat-icon>more_vert</mat-icon></button>\n<button mat-icon-button><mat-icon>home</mat-icon></button>\n<button mat-icon-button><mat-icon>menu</mat-icon></button>\n<button mat-icon-button><mat-icon>favorite</mat-icon></button>\n<button mat-icon-button><mat-icon>open_in_new</mat-icon></button>\n`\n})"
+                },
+                {
+                    "name": "Overview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/components/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\n  props: args,\n  template: `\n<style>mat-icon {margin: 10px}</style>\n<mat-icon>more_vert</mat-icon>\n<mat-icon>home</mat-icon>\n<mat-icon>menu</mat-icon>\n<mat-icon>favorite</mat-icon>\n<mat-icon>open_in_new</mat-icon>\n`\n})"
+                }
+            ],
             "projects/showcase/src/test.ts": [
                 {
                     "name": "context",
@@ -709,18 +761,6 @@
                     "deprecationMessage": "",
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-                }
-            ],
-            "stories/components/icon.stories.ts": [
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/components/icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "args => ({\n  props: {\n    ...args,\n    label: 'home'\n  },\n  template: `<mat-icon>{{label}}</mat-icon>`\n})"
                 }
             ]
         },
@@ -915,7 +955,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "Badge",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/components/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Buttons",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/components/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Overview",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
