@@ -25,6 +25,7 @@
     "@angular/router": "^14.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "tinycolor2": "^1.4.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -43,6 +44,7 @@
     "@storybook/manager-webpack5": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
     "@types/jasmine": "~4.0.0",
+    "@types/tinycolor2": "^1.4.3",
     "babel-loader": "^8.2.5",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",
