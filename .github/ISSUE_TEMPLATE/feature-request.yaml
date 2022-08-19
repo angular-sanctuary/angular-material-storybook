@@ -1,0 +1,33 @@
+name: 'Feature Request'
+description: Suggest a feature for Angular Material Storybook project
+
+body:
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives-considered
+    attributes:
+      label: Alternatives considered
+
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Do you want to create a pull request?
+      options:
+        - 'Yes'
+        - 'No'
+    validations:
+      required: true
