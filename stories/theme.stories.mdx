@@ -1,7 +1,12 @@
 import {Meta, Story} from "@storybook/addon-docs";
 import { ThemeComponent} from "./theme.component";
 
-<Meta title="Theme" component={ThemeComponent} />
+<Meta
+  title="Theme" component={ThemeComponent}
+  parameters={{
+    viewMode: 'docs'
+  }}
+/>
 
 ## Change Material palette
 <Story name="Theme"></Story>
