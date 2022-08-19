@@ -38,13 +38,6 @@ export const Fullscreen: Story = args => ({
   props: args,
   template: `
     <style>
-    :host {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
     section {
     display: flex;
     flex-direction: column;
@@ -59,3 +52,6 @@ export const Fullscreen: Story = args => ({
 `
 });
 Fullscreen.storyName = 'fullscreen';
+Fullscreen.parameters = {
+  layout: 'centered',
+}
