@@ -9,6 +9,7 @@ module.exports = {
     "@storybook/addon-interactions",
     "@storybook/addon-actions",
     "@storybook/addon-docs",
+    "storybook-addon-rtl"
   ],
   "framework": "@storybook/angular",
   "core": {
