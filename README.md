@@ -19,3 +19,9 @@ ng run showcase:storybook
 > Guidances in progress
 
 You can contribute by adding **Components** and **Usecases**
+
+## Known bugs
+
+#### Canvas
+> error triggered by using `<Canvas />`  
+[GitHub issue](https://github.com/storybookjs/storybook/issues/17269)
