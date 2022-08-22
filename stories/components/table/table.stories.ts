@@ -8,6 +8,12 @@ export default {
       imports: [MatTableModule]
     })
   ],
+  parameters: {
+    layout: 'fullscreen',
+    controls: {
+      expanded: true
+    }
+  }
 } as Meta;
 
 export const WithBasicUsage: Story = args => ({
