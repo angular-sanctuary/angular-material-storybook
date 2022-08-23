@@ -14,5 +14,6 @@ export const parameters = {
     },
   },
   viewMode: 'story',
-  docs: {inlineStories: true}
+  docs: {inlineStories: true},
+  direction: 'ltr'
 }
