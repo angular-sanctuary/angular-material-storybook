@@ -1,15 +1,18 @@
 import {Meta, Story} from "@storybook/addon-docs";
-import { ThemeComponent} from "./theme.component";
+import ThemeSettings from "./theme";
 
 <Meta
-  title="Theme" component={ThemeComponent}
+  title="Theme"
   parameters={{
     viewMode: 'docs'
   }}
 />
 
-## Change Material palette
-<Story name="Theme"></Story>
-
-## Live Example
-<Story id="components-icon--with-floating-action-buttons"></Story>
+<section className="theme-container">
+  <section className="theme-preview">
+    <Story id="usecases-progress-indicators--toolbar" />
+  </section>
+  <section className="theme-settings">
+    <ThemeSettings />
+  </section>
+</section>

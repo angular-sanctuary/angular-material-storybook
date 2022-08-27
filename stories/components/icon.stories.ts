@@ -12,7 +12,6 @@ export default {
     })
   ],
   parameters: {
-    layout: 'centered',
     options: {
       controls: {
         disable: true

@@ -6,12 +6,13 @@ import {MatIconModule} from "@angular/material/icon";
 import {progressBarArgtypes} from "../../components/progress-bar/progress-bar.argtype";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {progressSpinnerArgtypes} from "../../components/progress-spinner/progress-spinner.argtype";
+import {MatBadgeModule} from "@angular/material/badge";
 
 export default {
   title: 'usecases/Progress indicators',
   decorators: [
     moduleMetadata({
-      imports: [MatToolbarModule, MatProgressBarModule, MatProgressSpinnerModule, MatButtonModule, MatIconModule]
+      imports: [MatToolbarModule, MatProgressBarModule, MatProgressSpinnerModule, MatButtonModule, MatIconModule, MatBadgeModule]
     })
   ],
   argTypes: progressBarArgtypes,
@@ -26,9 +27,18 @@ export default {
 export const Toolbar: Story = args => ({
   props: args,
   template: `
+    <style>
+        mat-toolbar {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
   <mat-toolbar role="heading">
       <button mat-icon-button>
         <mat-icon>menu</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon matBadge="2" matBadgeColor="accent">notifications</mat-icon>
       </button>
     </mat-toolbar>
     <mat-progress-bar [bufferValue]="bufferValue" [color]="color" [mode]="mode" [value]="value"></mat-progress-bar>`
@@ -40,10 +50,12 @@ export const Fullscreen: Story = args => ({
   props: args,
   template: `
     <style>
-    :host {
+    article {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
+      height: 100%;
     }
     section {
         display: flex;
@@ -55,6 +67,7 @@ export const Fullscreen: Story = args => ({
         margin-block-end: 5rem;
     }
 </style>
+    <article>
     <section>
         <mat-progress-spinner [color]="color" [mode]="mode" [value]="value" [diameter]="diameter" [strokeWidth]="strokeWidth"></mat-progress-spinner>
         <p>Getting your files</p>
@@ -63,12 +76,10 @@ export const Fullscreen: Story = args => ({
         <mat-progress-bar [bufferValue]="bufferValue" [color]="color" [mode]="mode" [value]="value"></mat-progress-bar>
         <p>Getting your files</p>
     </section>
+    </article>
 `
 });
 Fullscreen.storyName = 'fullscreen';
-Fullscreen.parameters = {
-  layout: 'centered',
-};
 Fullscreen.argTypes = {
   ...progressSpinnerArgtypes,
   ...progressBarArgtypes

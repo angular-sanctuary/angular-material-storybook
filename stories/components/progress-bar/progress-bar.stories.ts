@@ -11,7 +11,6 @@ export default {
   ],
   argTypes: progressBarArgtypes,
   parameters: {
-    layout: 'centered',
     controls: {
       expanded: true,
       exclude: ['mode']

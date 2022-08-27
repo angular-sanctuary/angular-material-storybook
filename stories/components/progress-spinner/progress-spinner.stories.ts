@@ -11,7 +11,6 @@ export default {
   ],
   argTypes: progressSpinnerArgtypes,
   parameters: {
-    layout: 'centered',
     controls: {
       expanded: true,
       exclude: ['mode']
@@ -23,11 +22,6 @@ export const WithBasicUsage: Story = args => ({
   props: args,
   template: `
     <style>
-        :host {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
         mat-progress-spinner:first-child {
         margin-block-end: 3rem;
         }

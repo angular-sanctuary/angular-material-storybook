@@ -9,10 +9,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1rem;
     border: 1px black solid;
     border-radius: 4px;
     width: fit-content;
+  }
+
+  .inline-story header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+
+  .inline-story .mat-app-background {
+    padding: 2rem;
   }
 
   .inline-story header {
@@ -26,4 +35,65 @@
     height: 1.5rem;
     width: 1.5rem;
   }
+
+  .theme-container {
+    display: flex;
+  }
+
+  .theme-preview {
+    width: 40% !important;
+  }
+
+  .theme-settings {
+    flex-grow: 1;
+    padding-inline-start: 1rem;
+  }
+
+  .theme-settings__color-field {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .theme-settings__color-field + .theme-settings__color-field {
+    margin-block-start: 1rem;
+  }
+
+  .theme-settings__preset-color-button {
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    padding: 0.5rem;
+    font-size: 0;
+    cursor: pointer;
+  }
+
+  .theme-settings__preset-color-button + .theme-settings__preset-color-button {
+    margin-inline-start: 0.5rem;
+  }
+
+  .theme-settings__preset-color {
+    display: inherit;
+    height: 2rem;
+    width: 2rem;
+    background-color: red;
+    border-radius: 4px;
+  }
+
+  .theme-settings__preset-color + .theme-settings__preset-color {
+    margin-inline-start: 0.5rem;
+  }
+
+  .ripple {
+    background-position: center;
+    transition: background 0.8s;
+  }
+  .ripple:hover {
+    background: white radial-gradient(circle, transparent 1%, white 1%) center/15000%;
+  }
+  .ripple:active {
+    background-color: gray;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
 </style>
