@@ -1,5 +1,6 @@
-import {Meta, Story} from "@storybook/addon-docs";
-import ThemeSettings from "./theme";
+import {Meta} from "@storybook/addon-docs";
+import ThemeSettings from "./theme-settings";
+import ThemePreview from "./theme-preview";
 
 <Meta
   title="Theme"
@@ -10,7 +11,24 @@ import ThemeSettings from "./theme";
 
 <section className="theme-container">
   <section className="theme-preview">
-    <Story id="usecases-progress-indicators--toolbar" />
+    <ThemePreview stories={[
+      {
+        id: 'usecases-authentication-change-password--change-password',
+        name: 'Change password'
+      },
+      {
+        id: 'usecases-progress-indicators--toolbar',
+        name: 'Toolbar'
+      },
+      {
+        id: 'usecases-settings--wifi',
+        name: 'Wi-Fi'
+      },
+      {
+        id: 'usecases-settings--generic',
+        name: 'Settings'
+      }
+    ]} />
   </section>
   <section className="theme-settings">
     <ThemeSettings />
