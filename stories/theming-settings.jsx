@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import * as tinycolor from "tinycolor2";
 
-export default function ThemeSettings() {
+export default function ThemingSettings() {
   const [lightPrimaryColor, setLightPrimaryColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--light-theme-primary-500') || '#3f51b5');
   const [lightAccentColor, setLightAccentColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--light-theme-accent-500') || '#ff4081');
   const [lightWarnColor, setLightWarnColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--light-theme-warn-500') || '#f44336');

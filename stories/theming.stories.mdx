@@ -1,9 +1,9 @@
 import {Meta} from "@storybook/addon-docs";
-import ThemeSettings from "./theme-settings";
-import ThemePreview from "./theme-preview";
+import ThemingSettings from "./theming-settings";
+import ThemingPreview from "./theming-preview";
 
 <Meta
-  title="Theme"
+  title="Theming"
   parameters={{
     viewMode: 'docs'
   }}
@@ -11,7 +11,7 @@ import ThemePreview from "./theme-preview";
 
 <section className="theme-container">
   <section className="theme-preview">
-    <ThemePreview stories={[
+    <ThemingPreview stories={[
       {
         id: 'usecases-authentication-change-password--change-password',
         name: 'Change password'
@@ -31,6 +31,6 @@ import ThemePreview from "./theme-preview";
     ]} />
   </section>
   <section className="theme-settings">
-    <ThemeSettings />
+    <ThemingSettings />
   </section>
 </section>

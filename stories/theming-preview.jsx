@@ -5,7 +5,7 @@ import ArrowPreviousDisabled from './assets/arrow-previous_disabled.svg';
 import ArrowNext from './assets/arrow-next.svg';
 import ArrowNextDisabled from './assets/arrow-next_disabled.svg';
 
-export default function ThemePreview(props) {
+export default function ThemingPreview(props) {
   const [activeStory, setActiveStory] = useState(props.stories[0]);
 
   const displayPreviousPreview = () => {
