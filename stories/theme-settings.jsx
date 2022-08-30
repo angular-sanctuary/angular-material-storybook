@@ -170,11 +170,11 @@ export default function ThemeSettings() {
 
 function updateTheme(colors, theme, mode) {
   colors.forEach(color => {
-    document.documentElement.style.setProperty(
+    document.body.style.setProperty(
       `--${mode}-theme-${theme}-${color.name}`,
       color.hex
     );
-    document.documentElement.style.setProperty(
+    document.body.style.setProperty(
       `--${mode}-theme-${theme}-contrast-${color.name}`,
       color.darkContrast ? 'rgba(black, 0.87)' : 'white'
     );
