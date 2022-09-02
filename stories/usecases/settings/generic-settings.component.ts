@@ -103,7 +103,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
           align-items: center;
         }
         .settings__main-container {
-          width: 400px;
+          max-width: 400px;
+          width: calc(100% - 2rem);
         }
       }
     `

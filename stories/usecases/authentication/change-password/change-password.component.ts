@@ -30,13 +30,14 @@ import {MatIconModule} from "@angular/material/icon";
       </mat-form-field>
 
       <button class="change-password__save-button" mat-raised-button color="primary" type="submit">UPDATE PASSWORD</button>
-      <button mat-stroked-button color="warn" type="button">CANCEL</button>
+      <button class="change-password__cancel-button" mat-stroked-button color="warn" type="button">CANCEL</button>
     </form>
   `,
   styles: [
     ':host {display: flex; justify-content: center; height: 100%; width: 100%}',
     '.form-container {display: flex; flex-direction: column; justify-content: center;}',
     '.change-password__save-button {margin-block-start: 1rem; margin-block-end: 1rem}',
+    '.change-password__cancel-button {margin-block-end: 1rem}',
     '.change-password__title {margin-block-end: 3rem}'
   ],
   standalone: true,

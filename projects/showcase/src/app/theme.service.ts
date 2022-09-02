@@ -74,7 +74,7 @@ export class ThemeService {
       );
       document.body.style.setProperty(
         `--${mode}-theme-${theme}-contrast-${color.name}`,
-        color.darkContrast ? 'rgba(black, 0.87)' : 'white'
+        color.darkContrast ? 'black' : 'white'
       );
     });
   }

@@ -2,20 +2,29 @@ import React, {useState} from 'react';
 import * as tinycolor from "tinycolor2";
 
 export default function ThemingSettings() {
-  const [lightPrimaryColor, setLightPrimaryColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--light-theme-primary-500') || '#3f51b5');
-  const [lightAccentColor, setLightAccentColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--light-theme-accent-500') || '#ff4081');
+  const [lightPrimaryColor, setLightPrimaryColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--light-theme-primary-500') || '#006680');
+  const [lightAccentColor, setLightAccentColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--light-theme-accent-500') || '#F59432');
   const [lightWarnColor, setLightWarnColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--light-theme-warn-500') || '#f44336');
 
-  const [darkPrimaryColor, setDarkPrimaryColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--dark-theme-primary-500') || '#3f51b5');
-  const [darkAccentColor, setDarkAccentColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--dark-theme-accent-500') || '#ff4081');
+  const [lightPrimaryPalette, setLightPrimaryPalette] = useState(computeColors('#006680'));
+  const [lightAccentPalette, setLightAccentPalette] = useState(computeColors('#F59432'));
+  const [lightWarnPalette, setLightWarnPalette] = useState(computeColors('#f44336'));
+
+  const [darkPrimaryColor, setDarkPrimaryColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--dark-theme-primary-500') || '#006680');
+  const [darkAccentColor, setDarkAccentColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--dark-theme-accent-500') || '#F59432');
   const [darkWarnColor, setDarkWarnColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--dark-theme-warn-500') || '#f44336');
 
-  const [darkMode, setDarkMode] = useState(document.documentElement.classList.contains('dark-theme'))
+  const [darkPrimaryPalette, setDarkPrimaryPalette] = useState(computeColors('#006680'));
+  const [darkAccentPalette, setDarkAccentPalette] = useState(computeColors('#F59432'));
+  const [darkWarnPalette, setDarkWarnPalette] = useState(computeColors('#f44336'));
+
+  const [darkMode, setDarkMode] = useState(document.documentElement.classList.contains('dark-theme'));
 
   const saveLightPrimaryColor = (e) => {
     const primaryColor = e.target?.value || e;
     setLightPrimaryColor(primaryColor);
     const primaryColorPalette = computeColors(primaryColor);
+    setLightPrimaryPalette(primaryColorPalette);
     updateTheme(primaryColorPalette, 'primary', 'light');
   }
 
@@ -23,6 +32,7 @@ export default function ThemingSettings() {
     const accentColor = e.target?.value || e;
     setLightAccentColor(accentColor);
     const accentColorPalette = computeColors(accentColor);
+    setLightAccentPalette(accentColorPalette);
     updateTheme(accentColorPalette, 'accent', 'light');
   }
 
@@ -30,6 +40,7 @@ export default function ThemingSettings() {
     const warnColor = e.target?.value || e;
     setLightWarnColor(warnColor);
     const warnColorPalette = computeColors(warnColor);
+    setLightWarnPalette(warnColorPalette);
     updateTheme(warnColorPalette, 'warn', 'light');
   }
 
@@ -37,6 +48,7 @@ export default function ThemingSettings() {
     const primaryColor = e.target?.value || e;
     setDarkPrimaryColor(primaryColor);
     const primaryColorPalette = computeColors(primaryColor);
+    setDarkPrimaryPalette(primaryColorPalette);
     updateTheme(primaryColorPalette, 'primary', 'dark');
   }
 
@@ -44,13 +56,15 @@ export default function ThemingSettings() {
     const accentColor = e.target?.value || e;
     setDarkAccentColor(accentColor);
     const accentColorPalette = computeColors(accentColor);
+    setDarkAccentPalette(accentColorPalette);
     updateTheme(accentColorPalette, 'accent', 'dark');
   }
 
-  const saveDarktWarnColor = (e) => {
+  const saveDarkWarnColor = (e) => {
     const warnColor = e.target?.value || e;
     setDarkWarnColor(warnColor);
     const warnColorPalette = computeColors(warnColor);
+    setDarkWarnPalette(warnColorPalette);
     updateTheme(warnColorPalette, 'warn', 'dark');
   }
 
@@ -90,80 +104,137 @@ export default function ThemingSettings() {
     setLightWarnColor('#f44336');
   }
 
-  const toggleDarkTheme = () => {
-    document.documentElement.classList.toggle('dark-theme');
-    setDarkMode(!darkMode);
+  const toggleDarkTheme = (mode) => {
+    const newMode = mode ?? !darkMode;
+    if(newMode) {
+      document.documentElement.classList.add('dark-theme');
+    } else {
+      document.documentElement.classList.remove('dark-theme');
+    }
+    setDarkMode(newMode);
   }
 
   return (
     <>
-      <h3>Light theme</h3>
-      <article className="theme-settings__color-field">
-        <label htmlFor="primaryColor" className="theme-settings__primary-color-light-label">Primary color</label>
-        <input id="primaryColor" type="color" value={lightPrimaryColor} onChange={saveLightPrimaryColor}/>
-      </article>
-      <article className="theme-settings__color-field">
-        <label htmlFor="accentColor" className="theme-settings__primary-color-light-label">Accent color</label>
-        <input id="accentColor" type="color" value={lightAccentColor} onChange={saveLightAccentColor}/>
-      </article>
-      <article className="theme-settings__color-field">
-        <label htmlFor="warnColor" className="theme-settings__primary-color-light-label">Warn color</label>
-        <input id="warnColor" type="color" value={lightWarnColor} onChange={saveLightWarnColor}/>
-      </article>
+      <header className="theme-settings__header">
+        <button className="theme-settings__light-mode-button"  style={{borderBottomColor: !darkMode ? 'rgba(0,68,85,1)' : 'white'}} onClick={() => toggleDarkTheme(false)}>LIGHT THEME</button>
+        <button className="theme-settings__dark-mode-button" style={{borderBottomColor: darkMode ? 'rgba(0,68,85,1)' : 'white'}} onClick={() => toggleDarkTheme(true)}>DARK THEME</button>
+      </header>
+      <section style={{display: darkMode ? 'none' : 'block'}}>
+        <article className="theme-settings__color-field">
+          <label htmlFor="primaryColor" className="theme-settings__primary-color-light-label">Primary color</label>
+          <input className="theme-settings__color-input" id="primaryColor" type="color" value={lightPrimaryColor}
+                 onChange={saveLightPrimaryColor}/>
+        </article>
+        <ul className="theme-settings__palette-container">
+          {lightPrimaryPalette.map(color =>
+            <li className="theme-settings__palette-item">
+              <span className="theme_settings__palette-hex-item" style={{backgroundColor: color.hex}}/>
+              <span className="theme_settings__palette-name-item">{color.name}</span>
+            </li>
+          )}
+        </ul>
+        <article className="theme-settings__color-field">
+          <label htmlFor="accentColor" className="theme-settings__primary-color-light-label">Accent color</label>
+          <input className="theme-settings__color-input" id="accentColor" type="color" value={lightAccentColor}
+                 onChange={saveLightAccentColor}/>
+        </article>
+        <ul className="theme-settings__palette-container">
+          {lightAccentPalette.map(color =>
+            <li className="theme-settings__palette-item">
+              <span className="theme_settings__palette-hex-item" style={{backgroundColor: color.hex}}/>
+              <span className="theme_settings__palette-name-item">{color.name}</span>
+            </li>
+          )}
+        </ul>
+        <article className="theme-settings__color-field">
+          <label htmlFor="warnColor" className="theme-settings__primary-color-light-label">Warn color</label>
+          <input className="theme-settings__color-input" id="warnColor" type="color" value={lightWarnColor}
+                 onChange={saveLightWarnColor}/>
+        </article>
+        <ul className="theme-settings__palette-container">
+          {lightWarnPalette.map(color =>
+            <li className="theme-settings__palette-item">
+              <span className="theme_settings__palette-hex-item" style={{backgroundColor: color.hex}}/>
+              <span className="theme_settings__palette-name-item">{color.name}</span>
+            </li>
+          )}
+        </ul>
+      </section>
 
-      <br/>
-      <hr/>
+      <section style={{display: !darkMode ? 'none' : 'block'}}>
+        <article className="theme-settings__color-field">
+          <label htmlFor="primaryColor" className="theme-settings__primary-color-light-label">Primary color</label>
+          <input className="theme-settings__color-input" id="primaryColor" type="color" value={darkPrimaryColor}
+                 onChange={saveDarkPrimaryColor}/>
+        </article>
+        <ul className="theme-settings__palette-container">
+          {darkPrimaryPalette.map(color =>
+            <li className="theme-settings__palette-item">
+              <span className="theme_settings__palette-hex-item" style={{backgroundColor: color.hex}}/>
+              <span className="theme_settings__palette-name-item">{color.name}</span>
+            </li>
+          )}
+        </ul>
+        <article className="theme-settings__color-field">
+          <label htmlFor="accentColor" className="theme-settings__primary-color-light-label">Accent color</label>
+          <input className="theme-settings__color-input" id="accentColor" type="color" value={darkAccentColor}
+                 onChange={saveDarkAccentColor}/>
+        </article>
+        <ul className="theme-settings__palette-container">
+          {darkAccentPalette.map(color =>
+            <li className="theme-settings__palette-item">
+              <span className="theme_settings__palette-hex-item" style={{backgroundColor: color.hex}}/>
+              <span className="theme_settings__palette-name-item">{color.name}</span>
+            </li>
+          )}
+        </ul>
+        <article className="theme-settings__color-field">
+          <label htmlFor="warnColor" className="theme-settings__primary-color-light-label">Warn color</label>
+          <input className="theme-settings__color-input" id="warnColor" type="color" value={darkWarnColor}
+                 onChange={saveDarkWarnColor}/>
+        </article>
+        <ul className="theme-settings__palette-container">
+          {darkWarnPalette.map(color =>
+            <li className="theme-settings__palette-item">
+              <span className="theme_settings__palette-hex-item" style={{backgroundColor: color.hex}}/>
+              <span className="theme_settings__palette-name-item">{color.name}</span>
+            </li>
+          )}
+        </ul>
+      </section>
 
-      <h3>Dark theme</h3>
-      <article className="theme-settings__color-field">
-        <label htmlFor="primaryColor" className="theme-settings__primary-color-light-label">Primary color</label>
-        <input id="primaryColor" type="color" value={darkPrimaryColor} onChange={saveDarkPrimaryColor}/>
-      </article>
-      <article className="theme-settings__color-field">
-        <label htmlFor="accentColor" className="theme-settings__primary-color-light-label">Accent color</label>
-        <input id="accentColor" type="color" value={darkAccentColor} onChange={saveDarkAccentColor}/>
-      </article>
-      <article className="theme-settings__color-field">
-        <label htmlFor="warnColor" className="theme-settings__primary-color-light-label">Warn color</label>
-        <input id="warnColor" type="color" value={darkWarnColor} onChange={saveDarktWarnColor}/>
-      </article>
 
       <br/>
       <hr/>
 
       <h3>Presets</h3>
 
-      <button className="theme-settings__preset-color-button ripple" onClick={saveIndigoPreset}>
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#3f51b5'}} />
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#ff4081'}} />
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#f44336'}} />
-      </button>
+      <section className="theme-settings__preset-color-container">
+        <button className="theme-settings__preset-color-button ripple" onClick={saveIndigoPreset}>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#3f51b5'}}/>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#ff4081'}}/>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#f44336'}}/>
+        </button>
 
-      <button className="theme-settings__preset-color-button ripple" onClick={saveDeepPurplePreset}>
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#673ab7'}} />
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#ffd740'}} />
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#f44336'}} />
-      </button>
+        <button className="theme-settings__preset-color-button ripple" onClick={saveDeepPurplePreset}>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#673ab7'}}/>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#ffd740'}}/>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#f44336'}}/>
+        </button>
 
-      <button className="theme-settings__preset-color-button ripple" onClick={savePinkPreset}>
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#e91e63'}} />
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#607d8b'}} />
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#f44336'}} />
-      </button>
+        <button className="theme-settings__preset-color-button ripple" onClick={savePinkPreset}>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#e91e63'}}/>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#607d8b'}}/>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#f44336'}}/>
+        </button>
 
-      <button className="theme-settings__preset-color-button ripple" onClick={savePurplePreset}>
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#9c27b0'}} />
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#69f0ae'}} />
-        <span className="theme-settings__preset-color" style={{backgroundColor: '#f44336'}} />
-      </button>
-
-      <br/>
-      <hr/>
-
-      <h3>Dark mode</h3>
-
-      <input id="darkMode" type="checkbox" checked={darkMode} onChange={toggleDarkTheme}/>
-      <label htmlFor="darkMode">Activate dark mode</label>
+        <button className="theme-settings__preset-color-button ripple" onClick={savePurplePreset}>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#9c27b0'}}/>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#69f0ae'}}/>
+          <span className="theme-settings__preset-color" style={{backgroundColor: '#f44336'}}/>
+        </button>
+      </section>
     </>
   );
 }
@@ -176,7 +247,7 @@ function updateTheme(colors, theme, mode) {
     );
     document.body.style.setProperty(
       `--${mode}-theme-${theme}-contrast-${color.name}`,
-      color.darkContrast ? 'rgba(black, 0.87)' : 'white'
+      color.darkContrast ? 'black' : 'white'
     );
   });
 }
