@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import * as tinycolor from "tinycolor2";
+import Diamond from './assets/diamond.svg';
 
 export default function ThemingSettings() {
   const [lightPrimaryColor, setLightPrimaryColor] = useState(window.getComputedStyle(document.documentElement).getPropertyValue('--light-theme-primary-500') || '#006680');
@@ -120,6 +121,11 @@ export default function ThemingSettings() {
         <button className="theme-settings__light-mode-button"  style={{borderBottomColor: !darkMode ? 'rgba(0,68,85,1)' : 'white'}} onClick={() => toggleDarkTheme(false)}>LIGHT THEME</button>
         <button className="theme-settings__dark-mode-button" style={{borderBottomColor: darkMode ? 'rgba(0,68,85,1)' : 'white'}} onClick={() => toggleDarkTheme(true)}>DARK THEME</button>
       </header>
+
+      <aside className="theme-settings__info-container">
+        <img className="theme-settings__info-icon" src={Diamond} aria-hidden={true}/>
+        <span>Theme changes are applied on all stories</span>
+      </aside>
       <section style={{display: darkMode ? 'none' : 'block'}}>
         <article className="theme-settings__color-field">
           <label htmlFor="primaryColor" className="theme-settings__primary-color-light-label">Primary color</label>
@@ -204,8 +210,6 @@ export default function ThemingSettings() {
         </ul>
       </section>
 
-
-      <br/>
       <hr/>
 
       <h3>Presets</h3>
