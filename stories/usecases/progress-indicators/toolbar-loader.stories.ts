@@ -7,6 +7,7 @@ import {progressBarArgtypes} from "../../components/progress-bar/progress-bar.ar
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {progressSpinnerArgtypes} from "../../components/progress-spinner/progress-spinner.argtype";
 import {MatBadgeModule} from "@angular/material/badge";
+import {defaultUsecasesParameters} from "../../../.storybook/utils";
 
 export default {
   title: 'usecases/Progress indicators',
@@ -17,10 +18,7 @@ export default {
   ],
   argTypes: progressBarArgtypes,
   parameters: {
-    layout: 'fullscreen',
-    controls: {
-      expanded: true
-    }
+    ...defaultUsecasesParameters
   }
 } as Meta;
 

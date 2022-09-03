@@ -1,9 +1,10 @@
 import {Meta, moduleMetadata, Story} from "@storybook/angular";
 import {ConfirmationDialogComponent} from "./confirmation-dialog.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {defaultUsecasesParameters} from "../../../.storybook/utils";
 
 export default {
-  title: 'Usecases/dialog',
+  title: 'Usecases/Dialog',
   component: ConfirmationDialogComponent,
   decorators: [
     moduleMetadata({
@@ -11,18 +12,11 @@ export default {
     })
   ],
   parameters: {
-    options: {
-      showPanel: false
-    },
-    previewTabs: {
-      'storybook/docs/panel': {
-        hidden: true
-      }
-    }
+    ...defaultUsecasesParameters
   }
 } as Meta;
 
 export const Template: Story<ConfirmationDialogComponent> = args => ({
   props: args
 });
-Template.storyName = 'success dialog';
+Template.storyName = 'success (custom css)';

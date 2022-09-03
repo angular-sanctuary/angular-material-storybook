@@ -1,11 +1,12 @@
 import {Meta, Story} from "@storybook/angular";
 import {WifiSettingsComponent} from "./wifi-settings.component";
+import {defaultUsecasesParameters} from "../../../.storybook/utils";
 
 export default {
   title: 'usecases/Settings',
   component: WifiSettingsComponent,
   parameters: {
-    layout: 'fullscreen'
+    ...defaultUsecasesParameters
   }
 } as Meta;
 
