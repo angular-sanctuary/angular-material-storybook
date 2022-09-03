@@ -40,6 +40,7 @@ export class ConfirmationDialogComponent {
   `,
   styles: [
     ':host  {display: flex; justify-content: center; align-items: center; flex-direction: column}',
+    'h3 {text-align: center}',
     'mat-icon {color: green; height: 6rem; width: 6rem; font-size: 6rem}'
   ],
   standalone: true,
@@ -50,5 +51,4 @@ export class ConfirmationDialogComponent {
   ]
 })
 class ConfirmationDialogDialogComponent {
-
 }
