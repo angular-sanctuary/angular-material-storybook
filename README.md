@@ -4,7 +4,7 @@ This project is a collection of Angular Components showcased in isolation and in
 
 ## Run the project locally
 
-Install dependancies
+Install dependencies
 ```
 npm install
 ```
