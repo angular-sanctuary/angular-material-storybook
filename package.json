@@ -42,7 +42,7 @@
     "@storybook/addon-links": "^6.5.10",
     "@storybook/addons": "^6.5.12",
     "@storybook/angular": "^6.5.12",
-    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.12",
     "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^6.5.10",
