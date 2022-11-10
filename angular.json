@@ -30,7 +30,10 @@
             "styles": [
               "projects/showcase/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "tinycolor2"
+            ]
           },
           "configurations": {
             "production": {
