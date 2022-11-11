@@ -1,9 +1,9 @@
 import {Meta, Story} from "@storybook/angular";
 import {FabBottomNavigationComponent} from "./fab-bottom-navigation.component";
-import {defaultUsecasesParameters} from "../../../.storybook/utils";
+import {defaultUsecasesParameters} from "../../../../.storybook/utils";
 
 export default {
-  title: 'Usecases/navigation',
+  title: 'Usecases/Navigation',
   component: FabBottomNavigationComponent,
   parameters: {
     ...defaultUsecasesParameters,
