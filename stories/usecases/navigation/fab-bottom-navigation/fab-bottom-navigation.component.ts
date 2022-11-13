@@ -23,7 +23,7 @@ import {MatButtonModule} from "@angular/material/button";
           <mat-icon fontSet="material-icons-outlined">settings</mat-icon>
         </a>
       </section>
-      <button mat-fab color="primary">
+      <button mat-fab color="primary" aria-label="add item">
         <mat-icon>add</mat-icon>
       </button>
     </mat-toolbar>`,

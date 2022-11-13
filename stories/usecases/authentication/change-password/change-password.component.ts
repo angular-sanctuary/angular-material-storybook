@@ -16,7 +16,7 @@ import {MatIconModule} from "@angular/material/icon";
       <mat-form-field appearance="fill">
         <mat-label>New password</mat-label>
         <input type="password" matInput autocomplete="off">
-        <button mat-icon-button matSuffix>
+        <button type="button" mat-icon-button matSuffix aria-label="display password">
           <mat-icon>visibility_off</mat-icon>
         </button>
       </mat-form-field>
@@ -24,7 +24,7 @@ import {MatIconModule} from "@angular/material/icon";
       <mat-form-field appearance="fill">
         <mat-label>Confirm new password</mat-label>
         <input type="password" matInput autocomplete="off">
-        <button mat-icon-button matSuffix>
+        <button type="button" mat-icon-button matSuffix aria-label="display password">
           <mat-icon>visibility_off</mat-icon>
         </button>
       </mat-form-field>
