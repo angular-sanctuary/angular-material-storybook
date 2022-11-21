@@ -9,9 +9,9 @@
 //  If you specify typography styles for the components you use elsewhere, you should delete this line.
 //  If you don't need the default component typographies but still want the hierarchy styles,
 //  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
-@include mat.all-legacy-component-typographies();
-@include mat.legacy-core();
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+@include mat.all-component-typographies();
+@include mat.core();
 
 $light-primary: mat.define-palette($light-theme-primary);
 $light-accent: mat.define-palette($light-theme-accent);
@@ -37,14 +37,14 @@ $dark-theme: mat.define-dark-theme((
   )
 ));
 
-@include mat.legacy-core-theme($light-theme);
-@include mat.all-legacy-component-themes($light-theme);
+@include mat.core-theme($light-theme);
+@include mat.all-component-themes($light-theme);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .dark-theme {
-  @include mat.legacy-core-color($dark-theme);
-  @include mat.all-legacy-component-colors($dark-theme);
+  @include mat.core-color($dark-theme);
+  @include mat.all-component-colors($dark-theme);
 
 }
