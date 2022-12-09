@@ -1,11 +1,5 @@
-import { Meta, Story } from '@storybook/addon-docs';
-
-<Meta
-  title="Components/Table/Overview"
-  parameters={{
-    viewMode: 'docs'
-  }}
-/>
+import { Story } from '@storybook/blocks';
+import * as ComponentStories from './table.stories';
 
 # Table
 
@@ -23,6 +17,6 @@ import { Meta, Story } from '@storybook/addon-docs';
 
 ## Example
 
-<Story id="components-table--with-basic-usage"></Story>
+<Story of={ComponentStories.WithBasicUsage}></Story>
 
 

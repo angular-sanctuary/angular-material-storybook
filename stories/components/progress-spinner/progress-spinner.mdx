@@ -1,11 +1,6 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Story } from '@storybook/blocks';
+import * as ComponentStories from './progress-spinner.stories';
 
-<Meta
-  title="Components/progress-spinner/Overview"
-  parameters={{
-    viewMode: 'docs'
-  }}
-/>
 
 # Progress spinner
 
@@ -23,6 +18,6 @@ import { Meta, Story } from '@storybook/addon-docs';
 
 ## Example
 
-<Story id="components-progress-spinner--with-basic-usage"></Story>
+<Story of={ComponentStories.WithBasicUsage}></Story>
 
 
