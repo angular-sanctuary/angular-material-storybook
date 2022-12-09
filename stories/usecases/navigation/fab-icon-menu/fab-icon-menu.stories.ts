@@ -1,4 +1,4 @@
-import {Meta, Story} from "@storybook/angular";
+import {Meta, StoryFn} from "@storybook/angular";
 import {defaultUsecasesParameters} from "../../../../.storybook/utils";
 import {FabIconMenuComponent} from "./fab-icon-menu.component";
 
@@ -13,7 +13,7 @@ export default {
   }
 } as Meta;
 
-export const Fab: Story<FabIconMenuComponent> = args => ({
+export const Fab: StoryFn<FabIconMenuComponent> = args => ({
   props: args
 });
 Fab.storyName = 'fab menu (with icons)';

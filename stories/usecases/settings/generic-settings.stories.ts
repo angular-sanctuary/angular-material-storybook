@@ -1,4 +1,4 @@
-import {Meta, Story} from "@storybook/angular";
+import {Meta, StoryFn} from "@storybook/angular";
 import {GenericSettingsComponent} from "./generic-settings.component";
 import {defaultUsecasesParameters} from "../../../.storybook/utils";
 
@@ -10,7 +10,7 @@ export default {
   }
 } as Meta;
 
-export const Generic: Story<GenericSettingsComponent> = args => ({
+export const Generic: StoryFn<GenericSettingsComponent> = args => ({
   props: args
 });
 Generic.storyName = 'generic'

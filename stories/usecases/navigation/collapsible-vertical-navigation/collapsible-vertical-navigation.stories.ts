@@ -1,4 +1,4 @@
-import {Meta, Story} from "@storybook/angular";
+import {Meta, StoryFn} from "@storybook/angular";
 import {defaultUsecasesParameters} from "../../../../.storybook/utils";
 import {CollapsibleVerticalNavigationComponent} from "./collapsible-vertical-navigation.component";
 
@@ -13,7 +13,7 @@ export default {
   }
 } as Meta;
 
-export const CollapsibleVerticalNavigation: Story<CollapsibleVerticalNavigationComponent> = args => ({
+export const CollapsibleVerticalNavigation: StoryFn<CollapsibleVerticalNavigationComponent> = args => ({
   props: args
 });
 CollapsibleVerticalNavigation.storyName = 'collapsible vertical navigation';

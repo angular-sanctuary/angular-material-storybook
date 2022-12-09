@@ -1,4 +1,4 @@
-import {Meta, Story} from "@storybook/angular";
+import {Meta, StoryFn} from "@storybook/angular";
 import {FabBottomNavigationComponent} from "./fab-bottom-navigation.component";
 import {defaultUsecasesParameters} from "../../../../.storybook/utils";
 
@@ -13,7 +13,7 @@ export default {
   }
 } as Meta;
 
-export const Template: Story<FabBottomNavigationComponent> = args => ({
+export const Template: StoryFn<FabBottomNavigationComponent> = args => ({
   props: args
 });
 Template.storyName = 'bottom navigation 1';

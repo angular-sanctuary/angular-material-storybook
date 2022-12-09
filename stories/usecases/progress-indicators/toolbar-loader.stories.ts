@@ -1,4 +1,4 @@
-import {Meta, moduleMetadata, Story} from "@storybook/angular";
+import {Meta, moduleMetadata, StoryFn} from "@storybook/angular";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatButtonModule} from "@angular/material/button";
@@ -22,7 +22,7 @@ export default {
   }
 } as Meta;
 
-export const Toolbar: Story = args => ({
+export const Toolbar: StoryFn = args => ({
   props: args,
   template: `
     <style>
@@ -44,7 +44,7 @@ export const Toolbar: Story = args => ({
 Toolbar.storyName = 'toolbar';
 
 
-export const Fullscreen: Story = args => ({
+export const Fullscreen: StoryFn = args => ({
   props: args,
   template: `
     <style>

@@ -1,4 +1,4 @@
-import {Meta, moduleMetadata, Story} from "@storybook/angular";
+import {Meta, moduleMetadata, StoryFn} from "@storybook/angular";
 import {MatTableModule} from "@angular/material/table";
 
 export default {
@@ -16,7 +16,7 @@ export default {
   }
 } as Meta;
 
-export const WithBasicUsage: Story = args => ({
+export const WithBasicUsage: StoryFn = args => ({
   props: {
     ...args,
     displayedColumns: ['position', 'name', 'weight', 'symbol'],

@@ -1,4 +1,4 @@
-import {Meta, moduleMetadata, Story} from "@storybook/angular";
+import {Meta, moduleMetadata, StoryFn} from "@storybook/angular";
 import {ConfirmationDialogComponent} from "./confirmation-dialog.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {defaultUsecasesParameters} from "../../../.storybook/utils";
@@ -16,7 +16,7 @@ export default {
   }
 } as Meta;
 
-export const Template: Story<ConfirmationDialogComponent> = args => ({
+export const Template: StoryFn<ConfirmationDialogComponent> = args => ({
   props: args
 });
 Template.storyName = 'success (custom css)';

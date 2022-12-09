@@ -1,4 +1,4 @@
-import {Meta, moduleMetadata, Story} from "@storybook/angular";
+import {Meta, moduleMetadata, StoryFn} from "@storybook/angular";
 import {progressSpinnerArgtypes} from "./progress-spinner.argtype";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
@@ -18,7 +18,7 @@ export default {
   }
 } as Meta;
 
-export const WithBasicUsage: Story = args => ({
+export const WithBasicUsage: StoryFn = args => ({
   props: args,
   template: `
     <style>

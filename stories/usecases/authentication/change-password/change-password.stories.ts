@@ -1,4 +1,4 @@
-import {Meta, moduleMetadata, Story} from "@storybook/angular";
+import {Meta, moduleMetadata, StoryFn} from "@storybook/angular";
 import {ChangePasswordComponent} from "./change-password.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {defaultUsecasesParameters} from "../../../../.storybook/utils";
@@ -18,7 +18,7 @@ export default {
   ]
 } as Meta;
 
-export const ChangePassword: Story<ChangePasswordComponent> = args => ({
+export const ChangePassword: StoryFn<ChangePasswordComponent> = args => ({
   props: args
 });
 ChangePassword.storyName = 'change password';
