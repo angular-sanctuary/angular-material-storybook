@@ -1,21 +1,36 @@
 module.exports = {
   "stories": [
     "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)"
+    "../stories/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-actions",
     "@storybook/addon-interactions",
-    "@storybook/addon-docs",
     "storybook-addon-rtl",
     "storybook-addon-pseudo-states",
-    "@storybook/addon-a11y"
+    "@storybook/addon-a11y",
   ],
-  "framework": "@storybook/angular",
-  "core": {
-    "builder": "@storybook/builder-webpack5"
+  "framework": {
+    name: "@storybook/angular",
+    options: {},
   },
-  "staticDirs": ['../public'],
-}
+  "staticDirs": [
+    '../public',
+    {
+      from: "../stories/assets",
+      to: "/static/assets",
+    },
+  ],
+  "features": {
+    "interactionsDebugger": true
+  },
+  "core": {},
+  "docs": {
+    // You can change this value to `false` to remove all automaitcally generated Docs Pages
+    // We recommend instead to use them, and remove the "Overview" pages.
+    // But there might be some features/content missing, so you be the judge.
+    // For more information take a look here: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#docs-page
+    "docsPage": "automatic",
+  },
+};

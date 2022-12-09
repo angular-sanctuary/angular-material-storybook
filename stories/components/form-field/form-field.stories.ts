@@ -1,4 +1,5 @@
-import {Meta, moduleMetadata, Story} from "@storybook/angular";
+
+import {Meta, moduleMetadata, StoryFn} from "@storybook/angular";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -6,7 +7,9 @@ import {formFieldArgtypes} from "./form-field-argtype";
 import {MatSelectModule} from "@angular/material/select";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
-import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms"
+import { userEvent, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 
 export default {
   title: 'components/Form field',
@@ -32,15 +35,25 @@ export default {
   argTypes: formFieldArgtypes
 } as Meta;
 
-export const AAWithBasicUsage: Story = args => ({
+export const AAWithBasicUsage: StoryFn = args => ({
   props: args,
   template: `
     <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
         <mat-label>Password</mat-label>
         <input type="text" matInput>
     </mat-form-field>
-  `
+  `,
 });
+// Added an example of how to use the play function
+// For more information, see https://storybook.js.org/docs/angular/writing-tests/interaction-testing
+AAWithBasicUsage.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  await userEvent.type(canvas.getByLabelText('Password'), 'email@provider.com');
+  await expect(
+    canvas.getByLabelText('Password')
+  ).toHaveValue('email@provider.com')
+}
 AAWithBasicUsage.storyName = 'basic usage';
 AAWithBasicUsage.parameters = {
   controls: {
@@ -48,7 +61,7 @@ AAWithBasicUsage.parameters = {
   }
 }
 
-export const WithStateFilled: Story = args => ({
+export const WithStateFilled: StoryFn = args => ({
   props: args,
   template: `
     <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -64,7 +77,7 @@ WithStateFilled.parameters = {
   }
 }
 
-export const WithStateDisabled: Story = args => ({
+export const WithStateDisabled: StoryFn = args => ({
   props: args,
   template: `
     <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -80,11 +93,11 @@ WithStateDisabled.parameters = {
   }
 }
 
-export const WithStateFocused: Story = args => ({
+export const WithStateFocused: StoryFn = args => ({
   props: args,
   template: `
     <mat-form-field class="mat-focused" [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
-        <mat-label>Password</mat-label>
+        <mat-label>Password 1</mat-label>
         <input type="text" matInput [ngModel]="'admin'">
     </mat-form-field>
   `
@@ -96,7 +109,7 @@ WithStateFocused.parameters = {
   }
 }
 
-export const WithStateHover: Story = args => ({
+export const WithStateHover: StoryFn = args => ({
   props: args,
   template: `
     <mat-form-field class="mat-focused" [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -115,7 +128,7 @@ WithStateHover.parameters = {
   }
 }
 
-export const WithAppearanceLegacy: Story = args => ({
+export const WithAppearanceLegacy: StoryFn = args => ({
   props: {
     ...args,
     appearance: 'legacy'
@@ -134,7 +147,7 @@ WithAppearanceLegacy.parameters = {
   }
 }
 
-export const WithAppearanceStandard: Story = args => ({
+export const WithAppearanceStandard: StoryFn = args => ({
   props: {
     ...args,
     appearance: 'standard'
@@ -154,7 +167,7 @@ WithAppearanceStandard.parameters = {
 }
 
 
-export const WithAppearanceFill: Story = args => ({
+export const WithAppearanceFill: StoryFn = args => ({
   props: {
     ...args,
     appearance: 'fill'
@@ -173,7 +186,7 @@ WithAppearanceFill.parameters = {
   }
 }
 
-export const WithAppearanceOutline: Story = args => ({
+export const WithAppearanceOutline: StoryFn = args => ({
   props: {
     ...args,
     appearance: 'outline'
@@ -192,7 +205,7 @@ WithAppearanceOutline.parameters = {
   }
 }
 
-export const WithStartHint: Story = args => ({
+export const WithStartHint: StoryFn = args => ({
   props: args,
   template: `
     <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -204,7 +217,7 @@ export const WithStartHint: Story = args => ({
 });
 WithStartHint.storyName = 'with hint (start)';
 
-export const WithEndHint: Story = args => ({
+export const WithEndHint: StoryFn = args => ({
   props: args,
   template: `
     <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -219,7 +232,7 @@ export const WithEndHint: Story = args => ({
 });
 WithEndHint.storyName = 'with hint (end)'
 
-export const WithDoubleHints: Story = args => ({
+export const WithDoubleHints: StoryFn = args => ({
   props: args,
   template: `
     <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
@@ -232,7 +245,7 @@ export const WithDoubleHints: Story = args => ({
 });
 WithDoubleHints.storyName = 'with hint (double)'
 
-export const WithPrefix: Story = args => ({
+export const WithPrefix: StoryFn = args => ({
   props: {
     ...args,
     hide: true
@@ -252,7 +265,7 @@ WithPrefix.parameters = {
   }
 }
 
-export const WithSuffix: Story = args => ({
+export const WithSuffix: StoryFn = args => ({
   props: {
     ...args,
     hide: true
@@ -274,7 +287,7 @@ WithSuffix.parameters = {
   }
 }
 
-export const WithPrefixAndSuffix: Story = args => ({
+export const WithPrefixAndSuffix: StoryFn = args => ({
   props: {
     ...args,
     hide: true
@@ -311,7 +324,7 @@ WithPrefixAndSuffix.parameters = {
 
 const control = new FormControl('', Validators.required);
 control.markAsTouched();
-export const WithErrorMessage: Story = args => ({
+export const WithErrorMessage: StoryFn = args => ({
   props: {
     ...args,
     control: control

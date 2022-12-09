@@ -1,4 +1,4 @@
-import {Meta, moduleMetadata, Story} from "@storybook/angular";
+import {Meta, moduleMetadata, StoryFn} from "@storybook/angular";
 import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
 import {MatButtonModule} from "@angular/material/button";
@@ -20,7 +20,7 @@ export default {
   }
 } as Meta;
 
-export const BasicUsage: Story = args => ({
+export const BasicUsage: StoryFn = args => ({
   props: args,
   template: `
 <style>mat-icon {margin: 10px}</style>
@@ -33,7 +33,7 @@ export const BasicUsage: Story = args => ({
 });
 BasicUsage.storyName = 'basic usage';
 
-export const WithBadge: Story = args => ({
+export const WithBadge: StoryFn = args => ({
   props: args,
   template: `
 <style>mat-icon {margin: 10px}</style>
@@ -54,7 +54,7 @@ WithBadge.argTypes = {
   ...badgeArgtypes
 }
 
-export const WithButtons: Story = args => ({
+export const WithButtons: StoryFn = args => ({
   props: args,
   template: `
 <style>mat-icon {margin: 10px}</style>
@@ -67,7 +67,7 @@ export const WithButtons: Story = args => ({
 });
 WithButtons.storyName = 'with buttons';
 
-export const WithFloatingActionButtons: Story = args => ({
+export const WithFloatingActionButtons: StoryFn = args => ({
   props: args,
   template: `
 <style>button {margin: 10px}</style>
@@ -80,7 +80,7 @@ export const WithFloatingActionButtons: Story = args => ({
 });
 WithFloatingActionButtons.storyName = 'with floating action buttons';
 
-export const WithMiniFloatingActionButtons: Story = args => ({
+export const WithMiniFloatingActionButtons: StoryFn = args => ({
   props: args,
   template: `
 <style>button {margin: 10px}</style>

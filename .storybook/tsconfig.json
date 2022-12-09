@@ -1,10 +1,12 @@
 {
-  "extends": "../projects/showcase/tsconfig.app.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "types": [
-      "node"
+      "node",
+      "jest",
+      "testing-library__jest-dom",
     ],
-    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "../src/test.ts",
