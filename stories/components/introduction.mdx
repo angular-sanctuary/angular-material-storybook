@@ -1,11 +1,7 @@
 import { Meta } from '@storybook/addon-docs';
+import LinkTo from '@storybook/addon-links/react';
 
-<Meta
-  title="Components/Introduction"
-  parameters={{
-    viewMode: 'docs'
-  }}
-/>
+<Meta title="Components/Introduction" />
 
 <style>
   {`
@@ -92,53 +88,58 @@ import { Meta } from '@storybook/addon-docs';
 <div className="subheading">Components</div>
 
 <div className="link-list">
-  <a
+  <LinkTo
     className="link-item"
-    href="stories/components?path=/docs/components-form-field-overview--page"
+    kind="components-form-field"
+    story="docs"
   >
     <span>
       <strong>Form field</strong>
       Wraps input fields so they are displayed consistently.
     </span>
-  </a>
+  </LinkTo>
 
-  <a
+  <LinkTo
     className="link-item"
-    href="stories/components?path=/docs/components-icon-overview--page"
+    kind="components-icon"
+    story="docs"
   >
     <span>
       <strong>Icon</strong>
       Renders a specific icon.
     </span>
-  </a>
+  </LinkTo>
 
-  <a
+  <LinkTo
     className="link-item"
-    href="stories/components?path=/docs/components-progress-bar-overview--page"
+    kind="components-progress-bar"
+    story="docs"
   >
     <span>
       <strong>Progress bar</strong>
       A linear progress indicator.
     </span>
-  </a>
+  </LinkTo>
 
-  <a
+  <LinkTo
     className="link-item"
-    href="stories/components?path=/docs/components-progress-spinner-overview--page"
+    kind="components-progress-spinner"
+    story="docs"
   >
     <span>
       <strong>Progress spinner</strong>
       A circular progress indicator.
     </span>
-  </a>
+  </LinkTo>
 
-  <a
+  <LinkTo
     className="link-item"
-    href="stories/components?path=/docs/components-table-overview--page"
+    kind="components-table"
+    story="docs"
   >
     <span>
       <strong>Table</strong>
       A configurable component for displaying tabular data.
     </span>
-  </a>
+  </LinkTo>
 </div>

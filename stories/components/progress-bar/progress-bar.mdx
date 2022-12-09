@@ -1,11 +1,6 @@
-import { Meta, Story } from '@storybook/addon-docs';
+import { Story } from '@storybook/blocks';
+import * as ComponentStories from './progress-bar.stories';
 
-<Meta
-  title="Components/progress-bar/Overview"
-  parameters={{
-    viewMode: 'docs'
-  }}
-/>
 
 # Progress bar
 
@@ -23,6 +18,6 @@ import { Meta, Story } from '@storybook/addon-docs';
 
 ## Example
 
-<Story id="components-progress-bar--with-basic-usage"></Story>
+<Story of={ComponentStories.WithBasicUsage} />
 
 

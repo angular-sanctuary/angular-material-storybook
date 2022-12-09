@@ -13,6 +13,7 @@ import { expect } from '@storybook/jest';
 
 export default {
   title: 'components/Form field',
+  tags: ['docsPage'],
   decorators: [
     moduleMetadata({
       imports: [

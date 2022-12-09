@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Story} from "@storybook/addon-docs";
+import { Story } from "@storybook/blocks";
 import ArrowPrevious from './assets/arrow-previous.svg';
 import ArrowPreviousDisabled from './assets/arrow-previous_disabled.svg';
 import ArrowNext from './assets/arrow-next.svg';

@@ -1,6 +1,6 @@
 module.exports = {
   "stories": [
-    "../stories/**/*.stories.mdx",
+    "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   "addons": [
@@ -26,11 +26,11 @@ module.exports = {
     "interactionsDebugger": true
   },
   "core": {},
-  "docs": {
-    // You can change this value to `false` to remove all automaitcally generated Docs Pages
-    // We recommend instead to use them, and remove the "Overview" pages.
-    // But there might be some features/content missing, so you be the judge.
-    // For more information take a look here: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#docs-page
-    "docsPage": "automatic",
-  },
+  // "docs": {
+  //   // You can change this value to `false` to remove all automaitcally generated Docs Pages
+  //   // We recommend instead to use them, and remove the "Overview" pages.
+  //   // But there might be some features/content missing, so you be the judge.
+  //   // For more information take a look here: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#docs-page
+  //   "docsPage": "automatic",
+  // },
 };

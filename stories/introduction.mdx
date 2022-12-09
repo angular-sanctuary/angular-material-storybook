@@ -1,4 +1,6 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta } from '@storybook/blocks'
+import LinkTo from '@storybook/addon-links/react';
+
 import Code from './assets/code-brackets.svg';
 import Colors from './assets/colors.svg';
 import Comments from './assets/comments.svg';
@@ -6,12 +8,9 @@ import Plugin from './assets/plugin.svg';
 import Repo from './assets/repo.svg';
 import StackAlt from './assets/stackalt.svg';
 
-<Meta
-  title="Introduction"
-  parameters={{
-    viewMode: 'docs'
-  }}
-/>
+
+
+<Meta title="Introduction" />
 
 <style>
   {`
@@ -98,35 +97,32 @@ import StackAlt from './assets/stackalt.svg';
 <div className="subheading">Configure</div>
 
 <div className="link-list">
-  <a
-    className="link-item"
-    href="projects/showcase/src/stories?path=/docs/theming--page"
-  >
+  <LinkTo className="link-item" kind="Theming" story="docs">
     <img src={Colors} alt="colors" />
     <span>
       <strong>Theming</strong>
       How to dynamically change the theme palette of your UI.
     </span>
-  </a>
+  </LinkTo>
 </div>
 
 <div className="subheading">Discover</div>
 
 <div className="link-list">
-  <a className="link-item" href="projects/showcase/src/stories?path=/docs/components-introduction--page">
+  <LinkTo className="link-item" kind="components-introduction" story="docs">
     <img src={Plugin} alt="code" />
     <span>
       <strong>Components</strong>
       Basic examples of Angular Material components in isolation.
     </span>
-  </a>
-  <a className="link-item" href="projects/showcase/src/stories?path=/docs/usecases-introduction--page">
+  </LinkTo>
+  <LinkTo className="link-item" kind="usecases-introduction" story="docs">
     <img src={StackAlt} alt="comments" />
     <span>
       <strong>Usecases</strong>
       Discover real-world use cases.
     </span>
-  </a>
+  </LinkTo>
 </div>
 
 <div className="subheading">About this project</div>
