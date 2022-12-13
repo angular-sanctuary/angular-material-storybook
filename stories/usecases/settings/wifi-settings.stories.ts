@@ -1,16 +1,18 @@
-import {Meta, StoryFn} from "@storybook/angular";
-import {WifiSettingsComponent} from "./wifi-settings.component";
-import {defaultUsecasesParameters} from "../../../.storybook/utils";
+import { Meta, StoryObj } from '@storybook/angular';
+import { WifiSettingsComponent } from './wifi-settings.component';
+import { defaultUsecasesParameters } from '../../../.storybook/utils';
 
 export default {
   title: 'usecases/Settings',
   component: WifiSettingsComponent,
   parameters: {
-    ...defaultUsecasesParameters
-  }
+    ...defaultUsecasesParameters,
+  },
 } as Meta;
 
-export const Wifi: StoryFn<WifiSettingsComponent> = args => ({
-  props: args
-});
-Wifi.storyName = 'Wi-Fi';
+export const Wifi: StoryObj<WifiSettingsComponent> = {
+  render: (args) => ({
+    props: args,
+  }),
+  name: 'Wi-Fi',
+};

@@ -1,6 +1,6 @@
-import {Meta, StoryFn} from "@storybook/angular";
-import {defaultUsecasesParameters} from "../../../../.storybook/utils";
-import {CollapsibleVerticalNavigationComponent} from "./collapsible-vertical-navigation.component";
+import { Meta, StoryObj } from '@storybook/angular';
+import { defaultUsecasesParameters } from '../../../../.storybook/utils';
+import { CollapsibleVerticalNavigationComponent } from './collapsible-vertical-navigation.component';
 
 export default {
   title: 'Usecases/Navigation',
@@ -8,12 +8,14 @@ export default {
   parameters: {
     ...defaultUsecasesParameters,
     viewport: {
-      defaultViewport: 'mobile1'
+      defaultViewport: 'mobile1',
     },
-  }
+  },
 } as Meta;
 
-export const CollapsibleVerticalNavigation: StoryFn<CollapsibleVerticalNavigationComponent> = args => ({
-  props: args
-});
-CollapsibleVerticalNavigation.storyName = 'collapsible vertical navigation';
+export const CollapsibleVerticalNavigation: StoryObj<CollapsibleVerticalNavigationComponent> = {
+  render: (args) => ({
+    props: args,
+  }),
+  name: 'collapsible vertical navigation',
+};

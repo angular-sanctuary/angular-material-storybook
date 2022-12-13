@@ -1,6 +1,6 @@
-import {Meta, StoryFn} from "@storybook/angular";
-import {FabBottomNavigationComponent} from "./fab-bottom-navigation.component";
-import {defaultUsecasesParameters} from "../../../../.storybook/utils";
+import { Meta, StoryObj } from '@storybook/angular';
+import { FabBottomNavigationComponent } from './fab-bottom-navigation.component';
+import { defaultUsecasesParameters } from '../../../../.storybook/utils';
 
 export default {
   title: 'Usecases/Navigation',
@@ -8,12 +8,14 @@ export default {
   parameters: {
     ...defaultUsecasesParameters,
     viewport: {
-      defaultViewport: 'mobile1'
+      defaultViewport: 'mobile1',
     },
-  }
+  },
 } as Meta;
 
-export const Template: StoryFn<FabBottomNavigationComponent> = args => ({
-  props: args
-});
-Template.storyName = 'bottom navigation 1';
+export const Template: StoryObj<FabBottomNavigationComponent> = {
+  render: (args) => ({
+    props: args,
+  }),
+  name: 'bottom navigation 1',
+};
