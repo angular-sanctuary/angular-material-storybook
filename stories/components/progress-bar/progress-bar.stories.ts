@@ -1,26 +1,27 @@
-import {Meta, moduleMetadata, StoryFn} from "@storybook/angular";
-import {MatProgressBarModule} from "@angular/material/progress-bar";
-import {progressBarArgtypes} from "./progress-bar.argtype";
+import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { progressBarArgtypes } from './progress-bar.argtype';
 
 export default {
   title: 'components/Progress bar',
   decorators: [
     moduleMetadata({
-      imports: [MatProgressBarModule]
-    })
+      imports: [MatProgressBarModule],
+    }),
   ],
   argTypes: progressBarArgtypes,
   parameters: {
     controls: {
       expanded: true,
-      exclude: ['mode']
-    }
-  }
+      exclude: ['mode'],
+    },
+  },
 } as Meta;
 
-export const WithBasicUsage: StoryFn = args => ({
-  props: args,
-  template: `
+export const WithBasicUsage: StoryObj = {
+  render: (args) => ({
+    props: args,
+    template: `
     <style>
         mat-progress-bar {
         width: 15rem;
@@ -31,6 +32,7 @@ export const WithBasicUsage: StoryFn = args => ({
     <mat-progress-bar [bufferValue]="bufferValue" [color]="color" mode="indeterminate" [value]="value"></mat-progress-bar>
     <mat-progress-bar [bufferValue]="bufferValue" [color]="color" mode="query" [value]="value"></mat-progress-bar>
     <mat-progress-bar [bufferValue]="bufferValue" [color]="color" mode="buffer" [value]="value"></mat-progress-bar>
-`
-});
-WithBasicUsage.storyName = 'basic usage';
+`,
+  }),
+  name: 'basic usage',
+};

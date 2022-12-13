@@ -1,6 +1,6 @@
-import {Meta, StoryFn} from "@storybook/angular";
-import {defaultUsecasesParameters} from "../../../../.storybook/utils";
-import {FabIconMenuComponent} from "./fab-icon-menu.component";
+import { Meta, StoryObj } from '@storybook/angular';
+import { defaultUsecasesParameters } from '../../../../.storybook/utils';
+import { FabIconMenuComponent } from './fab-icon-menu.component';
 
 export default {
   title: 'Usecases/Navigation',
@@ -8,12 +8,14 @@ export default {
   parameters: {
     ...defaultUsecasesParameters,
     viewport: {
-      defaultViewport: 'mobile1'
+      defaultViewport: 'mobile1',
     },
-  }
+  },
 } as Meta;
 
-export const Fab: StoryFn<FabIconMenuComponent> = args => ({
-  props: args
-});
-Fab.storyName = 'fab menu (with icons)';
+export const Fab: StoryObj<FabIconMenuComponent> = {
+  render: (args) => ({
+    props: args,
+  }),
+  name: 'fab menu (with icons)',
+};

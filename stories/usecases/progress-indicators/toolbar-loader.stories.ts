@@ -1,30 +1,38 @@
-import {Meta, moduleMetadata, StoryFn} from "@storybook/angular";
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatProgressBarModule} from "@angular/material/progress-bar";
-import {MatButtonModule} from "@angular/material/button";
-import {MatIconModule} from "@angular/material/icon";
-import {progressBarArgtypes} from "../../components/progress-bar/progress-bar.argtype";
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {progressSpinnerArgtypes} from "../../components/progress-spinner/progress-spinner.argtype";
-import {MatBadgeModule} from "@angular/material/badge";
-import {defaultUsecasesParameters} from "../../../.storybook/utils";
+import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { progressBarArgtypes } from '../../components/progress-bar/progress-bar.argtype';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { progressSpinnerArgtypes } from '../../components/progress-spinner/progress-spinner.argtype';
+import { MatBadgeModule } from '@angular/material/badge';
+import { defaultUsecasesParameters } from '../../../.storybook/utils';
 
 export default {
   title: 'usecases/Progress indicators',
   decorators: [
     moduleMetadata({
-      imports: [MatToolbarModule, MatProgressBarModule, MatProgressSpinnerModule, MatButtonModule, MatIconModule, MatBadgeModule]
-    })
+      imports: [
+        MatToolbarModule,
+        MatProgressBarModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        MatIconModule,
+        MatBadgeModule,
+      ],
+    }),
   ],
   argTypes: progressBarArgtypes,
   parameters: {
-    ...defaultUsecasesParameters
-  }
+    ...defaultUsecasesParameters,
+  },
 } as Meta;
 
-export const Toolbar: StoryFn = args => ({
-  props: args,
-  template: `
+export const Toolbar: StoryObj = {
+  render: (args) => ({
+    props: args,
+    template: `
     <style>
         mat-toolbar {
             display: flex;
@@ -39,14 +47,15 @@ export const Toolbar: StoryFn = args => ({
         <mat-icon matBadge="2" matBadgeColor="accent">notifications</mat-icon>
       </button>
     </mat-toolbar>
-    <mat-progress-bar [bufferValue]="bufferValue" [color]="color" [mode]="mode" [value]="value"></mat-progress-bar>`
-});
-Toolbar.storyName = 'toolbar';
+    <mat-progress-bar [bufferValue]="bufferValue" [color]="color" [mode]="mode" [value]="value"></mat-progress-bar>`,
+  }),
+  name: 'toolbar',
+};
 
-
-export const Fullscreen: StoryFn = args => ({
-  props: args,
-  template: `
+export const Fullscreen: StoryObj = {
+  render: (args) => ({
+    props: args,
+    template: `
     <style>
     article {
       display: flex;
@@ -75,10 +84,11 @@ export const Fullscreen: StoryFn = args => ({
         <p>Getting your files</p>
     </section>
     </article>
-`
-});
-Fullscreen.storyName = 'fullscreen';
-Fullscreen.argTypes = {
-  ...progressSpinnerArgtypes,
-  ...progressBarArgtypes
-}
+`,
+  }),
+  name: 'fullscreen',
+  argTypes: {
+    ...progressSpinnerArgtypes,
+    ...progressBarArgtypes,
+  },
+};

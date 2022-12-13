@@ -33,4 +33,8 @@ module.exports = {
   //   // For more information take a look here: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#docs-page
   //   "docsPage": "automatic",
   // },
+  ,
+  docs: {
+    docsPage: "automatic"
+  }
 };
