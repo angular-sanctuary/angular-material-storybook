@@ -60,7 +60,7 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "storybook-addon-pseudo-states": "^1.15.1",
     "storybook-addon-rtl": "^0.4.4",
-    "typescript": "~4.7.2"
+    "typescript": "~4.9.4"
   },
   "readme": "ERROR: No README data found!",
   "_id": "angular-material-storybook@0.0.0"
