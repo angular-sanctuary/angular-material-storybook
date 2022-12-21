@@ -9,7 +9,8 @@
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "build-storybook": "npm run docs:json && build-storybook",
+    "chromatic": "npx chromatic --project-token=2475ac9ed750"
   },
   "private": true,
   "dependencies": {
@@ -50,6 +51,7 @@
     "@types/jasmine": "~4.3.0",
     "@types/tinycolor2": "^1.4.3",
     "babel-loader": "^9.1.0",
+    "chromatic": "^6.14.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.1",
     "karma-chrome-launcher": "~3.1.0",
@@ -59,5 +61,7 @@
     "storybook-addon-pseudo-states": "^1.15.1",
     "storybook-addon-rtl": "^0.4.4",
     "typescript": "~4.7.2"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "angular-material-storybook@0.0.0"
 }
