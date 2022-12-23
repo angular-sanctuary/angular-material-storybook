@@ -14,16 +14,16 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^14.2.10",
-    "@angular/cdk": "^14.2.7",
-    "@angular/common": "^14.2.10",
-    "@angular/compiler": "^14.2.10",
-    "@angular/core": "^14.2.10",
-    "@angular/forms": "^14.2.10",
-    "@angular/material": "^14.2.7",
-    "@angular/platform-browser": "^14.2.10",
-    "@angular/platform-browser-dynamic": "^14.2.10",
-    "@angular/router": "^14.2.10",
+    "@angular/animations": "^15.2.0",
+    "@angular/cdk": "^15.2.0",
+    "@angular/common": "^15.2.0",
+    "@angular/compiler": "^15.2.0",
+    "@angular/core": "^15.2.0",
+    "@angular/forms": "^15.2.0",
+    "@angular/material": "^15.2.0",
+    "@angular/platform-browser": "^15.2.0",
+    "@angular/platform-browser-dynamic": "^15.2.0",
+    "@angular/router": "^15.2.0",
     "@storybook/addon-a11y": "^6.5.13",
     "rxjs": "~7.5.7",
     "tinycolor2": "^1.4.2",
@@ -31,10 +31,10 @@
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.2.9",
-    "@angular/cli": "~14.2.9",
-    "@angular/compiler-cli": "^14.2.10",
-    "@babel/core": "^7.20.2",
+    "@angular-devkit/build-angular": "^15.2.0",
+    "@angular/cli": "~15.2.0",
+    "@angular/compiler-cli": "^15.2.0",
+    "@babel/core": "^7.21.0",
     "@babel/plugin-syntax-jsx": "^7.18.6",
     "@compodoc/compodoc": "^1.1.19",
     "@storybook/addon-actions": "^6.5.13",
@@ -60,8 +60,6 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "storybook-addon-pseudo-states": "^1.15.1",
     "storybook-addon-rtl": "^0.4.4",
-    "typescript": "~4.7.2"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "angular-material-storybook@0.0.0"
+    "typescript": "~4.8.4"
+  }
 }
