@@ -24,8 +24,8 @@
             "tsConfig": "projects/showcase/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/showcase/src/favicon.ico",
+              "projects/showcase/src/assets"
             ],
             "styles": [
               "projects/showcase/src/styles.scss"
@@ -95,7 +95,6 @@
             "karmaConfig": "projects/showcase/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/showcase/src/favicon.ico",
               "projects/showcase/src/assets"
             ],
             "styles": [
