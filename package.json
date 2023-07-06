@@ -47,6 +47,7 @@
     "@storybook/angular": "^7.0.0-beta.55",
     "@storybook/jest": "^0.0.11-next.0",
     "@storybook/manager-api": "^7.0.0-beta.55",
+    "@storybook/preview-api": "^7.0.0-beta.55",
     "@storybook/testing-library": "^0.0.14-next.1",
     "@storybook/theming": "^7.0.0-beta.55",
     "@types/jasmine": "~4.3.0",

@@ -135,48 +135,6 @@ export const WithStateHover: StoryObj = {
   },
 };
 
-export const WithAppearanceLegacy: StoryObj = {
-  render: (args) => ({
-    props: {
-      ...args,
-      appearance: 'legacy',
-    },
-    template: `
-      <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
-          <mat-label>Password</mat-label>
-          <input type="text" matInput>
-      </mat-form-field>
-    `,
-  }),
-  name: 'with appearance (legacy)',
-  parameters: {
-    controls: {
-      exclude: ['alignHint'],
-    },
-  },
-};
-
-export const WithAppearanceStandard: StoryObj = {
-  render: (args) => ({
-    props: {
-      ...args,
-      appearance: 'standard',
-    },
-    template: `
-      <mat-form-field [appearance]="appearance" [color]="color" [floatLabel]="floatLabel" [hideRequiredMarker]="hideRequiredMarker" [hintLabel]="hintLabel">
-          <mat-label>Password</mat-label>
-          <input type="text" matInput>
-      </mat-form-field>
-    `,
-  }),
-  name: 'with appearance (standard)',
-  parameters: {
-    controls: {
-      exclude: ['alignHint'],
-    },
-  },
-};
-
 export const WithAppearanceFill: StoryObj = {
   render: (args) => ({
     props: {

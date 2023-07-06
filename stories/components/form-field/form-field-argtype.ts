@@ -4,11 +4,9 @@ export const formFieldArgtypes = {
     control: 'select',
     defaultValue: 'standard',
     table: {
-      defaultValue: { summary: 'standard' },
+      defaultValue: { summary: 'fill' },
     },
     options: [
-      'legacy',
-      'standard',
       'fill',
       'outline',
     ]

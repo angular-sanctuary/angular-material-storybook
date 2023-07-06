@@ -2,7 +2,6 @@ export const progressSpinnerArgtypes = {
   color: {
     description: 'Theme color palette',
     control: 'select',
-    defaultValue: 'primary',
     table: {
       defaultValue: { summary: 'primary' },
     },
@@ -14,7 +13,6 @@ export const progressSpinnerArgtypes = {
   },
   diameter: {
     description: 'The diameter of the progress spinner (will set width and height of svg)',
-    defaultValue: 100,
     table: {
       type: { summary: 'number' },
       defaultValue: { summary: 100 },
@@ -26,7 +24,6 @@ export const progressSpinnerArgtypes = {
   mode: {
     description: 'Mode of the progress circle',
     control: 'select',
-    defaultValue: 'indeterminate',
     table: {
       defaultValue: { summary: 'indeterminate' },
     },
@@ -39,7 +36,6 @@ export const progressSpinnerArgtypes = {
   },
   strokeWidth: {
     description: 'Stroke width of the progress spinner',
-    defaultValue: 5,
     table: {
       type: { summary: 'number' },
       defaultValue: { summary: 5 },
@@ -50,10 +46,9 @@ export const progressSpinnerArgtypes = {
   },
   value: {
     description: 'Value of the progress circle',
-    defaultValue: 70,
+    type: { name: 'range' },
     table: {
-      type: { summary: 'range' },
-      defaultValue: { summary: 70 },
+      type: { summary: 70 },
     },
     control: {
       type: 'range',
